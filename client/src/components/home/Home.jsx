@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import BookGrid from "../books/BookGrid.jsx";
 import SearchBar from "../search-bar/SearchBar.jsx";
+import { useState } from "react";
 
 function Home() {
+
+    const [books,setBooks] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:3030/data/books')
+            .then(responce => responce.json())
+            .then(res => setBooks(res))
+    }, [])
     return (
         <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-sky-100 px-4 py-10">
 
@@ -19,7 +29,7 @@ function Home() {
                     <SearchBar />
                 </div>
 
-                <BookGrid />
+                <BookGrid books={books}/>
 
             </div>
         </div>

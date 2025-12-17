@@ -1,23 +1,27 @@
-function BookCard() {
+function BookCard({
+    book
+}) {
+    console.log(book);
+    
     return (
         <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col hover:shadow-lg transition">
 
             {/* Book cover */}
             <div className="h-48 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
-                <span className="text-gray-400 text-sm">No cover</span>
+                <img src={book.imgUrl}className="text-gray-400 text-sm"></img>
             </div>
 
             {/* Book info */}
             <h3 className="font-semibold text-gray-800 mb-1 line-clamp-2">
-                Book Title Goes Here
+                {book.title}
             </h3>
 
             <p className="text-sm text-gray-500 mb-1">
-                Author Name
+                Author: {book.author}
             </p>
 
             <p className="text-sm text-gray-400 mb-4">
-                2023
+                Year: {book.year}
             </p>
 
             {/* Actions */}
