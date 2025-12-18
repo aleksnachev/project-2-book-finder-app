@@ -1653,12 +1653,13 @@
         },
         books: {
             "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-                _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Bible",
-                imgUrl: "https://um-insight.net/downloads/313/download/Holy-Bible.jpg?cb=d7c66cda21ffa0b59262145100eec59f&w=1050",
                 author: "GOD",
+                imgUrl:"https://um-insight.net/downloads/313/download/Holy-Bible.jpg?cb=d7c66cda21ffa0b59262145100eec59f&w=1050",
+                title:"Bible",
                 year: 0,
-                
+                _id:"3987279d-0ad4-4afb-8ca9-5b256ae3b298",
+                _ownerId :"35c62d76-8152-4626-8712-eeb96381bea8"
+
                 //     _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 // name: "Easy Lasagna",
                 // img: "assets/lasagna.jpg",
