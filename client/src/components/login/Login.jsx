@@ -1,5 +1,22 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 function Login() {
+    const navigate = useNavigate()
+    const submitAction = (formData) => {
+        const {email, password} = Object.fromEntries(formData)
+        
+        fetch('http://localhost:3030/users/login', {
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({email,password})
+        })
+        .then(navigate('/'))
+        .catch(err => alert(err.message))
+        
+        
+    }
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-sky-100 flex items-center justify-center px-4">
 
@@ -13,7 +30,7 @@ function Login() {
                     Sign in to your account
                 </p>
 
-                <form className="space-y-4">
+                <form className="space-y-4" action={submitAction}>
 
                     {/* Email */}
                     <div>
@@ -24,6 +41,7 @@ function Login() {
                             type="email"
                             placeholder="you@example.com"
                             className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                            name="email"
                         />
                     </div>
 
@@ -36,6 +54,7 @@ function Login() {
                             type="password"
                             placeholder="••••••••"
                             className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                            name="password"
                         />
                     </div>
 
